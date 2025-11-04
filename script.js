@@ -82,9 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Add fade-out animation
-        displayContainer.style.opacity = '0';
-        displayContainer.style.transform = 'translateY(10px)';
+        // Add fade-out animation using CSS class
+        displayContainer.classList.add('fade-out');
         
         setTimeout(() => {
             let content = `<h2>${data.title}</h2>`;
@@ -96,10 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             displayContainer.innerHTML = content;
             
-            // Add fade-in animation
+            // Remove fade-out and trigger fade-in
             setTimeout(() => {
-                displayContainer.style.opacity = '1';
-                displayContainer.style.transform = 'translateY(0)';
+                displayContainer.classList.remove('fade-out');
             }, 50);
         }, 200);
     }
