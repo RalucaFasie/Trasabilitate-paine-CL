@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (buttons.length === 0) {
         console.warn('Nu au fost găsite butoane cu clasa .stage-button');
+        return; // Oprește execuția dacă nu există butoane
     }
 
     // Funcția care afișează datele

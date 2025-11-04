@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload întreg repository-ul ca site static
+          # Upload fișiere site static (.git și fișiere din .gitignore sunt excluse automat)
           path: '.'
       
       - name: Deploy to GitHub Pages
