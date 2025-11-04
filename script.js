@@ -82,14 +82,26 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        let content = `<h2>${data.title}</h2>`;
-        content += '<ul>';
-        data.points.forEach(point => {
-            content += `<li>${point}</li>`;
-        });
-        content += '</ul>';
+        // Add fade-out animation
+        displayContainer.style.opacity = '0';
+        displayContainer.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            let content = `<h2>${data.title}</h2>`;
+            content += '<ul>';
+            data.points.forEach(point => {
+                content += `<li>${point}</li>`;
+            });
+            content += '</ul>';
 
-        displayContainer.innerHTML = content;
+            displayContainer.innerHTML = content;
+            
+            // Add fade-in animation
+            setTimeout(() => {
+                displayContainer.style.opacity = '1';
+                displayContainer.style.transform = 'translateY(0)';
+            }, 50);
+        }, 200);
     }
 
     // Adaugă event listener pentru fiecare buton
