@@ -95,11 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             displayContainer.innerHTML = content;
             
-            // Remove fade-out and trigger fade-in
-            setTimeout(() => {
+            // Remove fade-out and trigger fade-in after a brief delay to ensure rendering
+            requestAnimationFrame(() => {
                 displayContainer.classList.remove('fade-out');
-            }, 50);
-        }, 200);
+            });
+        }, 300);
     }
 
     // Adaugă event listener pentru fiecare buton
