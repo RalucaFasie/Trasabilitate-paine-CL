@@ -1,97 +1,21 @@
 # Trasabilitate-paine-CL
 
-## Descriere
-O aplicație web demonstrativă care ilustrează conceptul de trasabilitate alimentară utilizând tehnologia blockchain pentru pâine din județul Călărași. Aplicația permite urmărirea întregului lanț de aprovizionare, de la fermă la raft.
+Proiect static pentru trasabilitate paine - site publicat pe GitHub Pages la: https://ralucafasie.github.io/Trasabilitate-paine_CL
 
-## Vizualizare Live
-Site-ul este disponibil la: [https://ralucafasie.github.io/Trasabilitate-paine-CL/](https://ralucafasie.github.io/Trasabilitate-paine-CL/)
+Instrucțiuni rulare locală:
+1. Clonează repo: git clone https://github.com/RalucaFasie/Trasabilitate-paine-CL.git
+2. Navighează în director: cd Trasabilitate-paine-CL
+3. Rulează un server static (recomandat):
+   - cu Node.js instalat: npx http-server . -p 8080
+   - sau cu live-server: npx live-server
+4. Accesează http://localhost:8080 în browser.
 
-## Structura Proiectului
-```
-Trasabilitate-paine-CL/
-├── index.html          # Pagina principală a aplicației
-├── style.css           # Stiluri CSS pentru interfață
-├── script.js           # Logica JavaScript pentru interacțiuni
-├── README.md           # Documentația proiectului
-├── LICENSE             # Licența proiectului
-└── .github/
-    └── workflows/
-        └── jekyll-gh-pages.yml  # Workflow pentru deployment automat
-```
+Instrucțiuni deploy pe GitHub Pages:
+- Site-ul este publicat la branch-ul main (implicit) și folosește GitHub Pages. Asigură-te că fișierele statice (index.html, css/, js/, images/) sunt în rădăcina branch-ului main.
+- Dacă folosești un subpath (ex: /Trasabilitate-paine_CL/), adaugă în <head> din index.html: <base href="/Trasabilitate-paine_CL/"> pentru a asigura încărcarea corectă a resurselor.
 
-## Rulare Locală
+Ce am corectat în branch fix/pages-and-frontend:
+- docs: update README cu instrucțiuni de rulare locală și deploy pe Pages.
 
-### Metoda 1: Cu Python (Recomandat)
-```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-```
-Apoi accesați în browser: `http://localhost:8000`
-
-### Metoda 2: Cu Node.js
-```bash
-# Instalați http-server global (doar prima dată)
-npm install -g http-server
-
-# Rulați serverul
-http-server -p 8000
-```
-Apoi accesați în browser: `http://localhost:8000`
-
-### Metoda 3: Cu Live Server (VS Code)
-1. Instalați extensia "Live Server" în VS Code
-2. Click dreapta pe `index.html`
-3. Selectați "Open with Live Server"
-
-## Deployment pe GitHub Pages
-
-### Configurare Automată
-Proiectul folosește GitHub Actions pentru deployment automat. La fiecare push pe branch-ul `main`, site-ul este automat actualizat pe GitHub Pages.
-
-### Pași pentru Activare GitHub Pages
-1. Mergeți la Settings → Pages în repository-ul GitHub
-2. Sub "Build and deployment", selectați:
-   - Source: **GitHub Actions**
-3. Site-ul va fi disponibil la: `https://[username].github.io/Trasabilitate-paine-CL/`
-
-### Deployment Manual
-Dacă doriți să deploy-ați manual:
-```bash
-git add .
-git commit -m "Update site"
-git push origin main
-```
-GitHub Actions va procesa automat deployment-ul.
-
-## Funcționalități
-- **Interfață interactivă**: Butoane pentru fiecare etapă din lanțul de aprovizionare
-- **Date blockchain simulate**: Informații detaliate pentru fiecare etapă (ferma, transport, moară, senzori IoT, magazin)
-- **Design responsive**: Optimizat pentru desktop și mobile
-- **Fără dependențe externe**: Funcționează cu HTML, CSS și JavaScript pur
-
-## Tehnologii Utilizate
-- HTML5
-- CSS3 (cu variabile CSS)
-- JavaScript vanilla (ES6+)
-- GitHub Pages pentru hosting
-- GitHub Actions pentru CI/CD
-
-## Browser Support
-Site-ul funcționează în toate browserele moderne:
-- Chrome/Edge (versiuni recente)
-- Firefox (versiuni recente)
-- Safari (versiuni recente)
-
-## Contribuții
-Pentru a contribui la proiect:
-1. Fork repository-ul
-2. Creați o branch nouă (`git checkout -b feature/improvement`)
-3. Commit-uiți schimbările (`git commit -m 'Add feature'`)
-4. Push la branch (`git push origin feature/improvement`)
-5. Deschideți un Pull Request
-
-## Licență
-Acest proiect este licențiat sub MIT License - vezi fișierul [LICENSE](LICENSE) pentru detalii.
+Note:
+- Nu am modificat fișierele frontend în acest commit. Următorul pas va fi inspectarea index.html și fișierelor CSS/JS și aplicarea corecțiilor pentru căi și erori JS; confirmă dacă vrei să continui automat sau preferi revizuire manuală înainte de schimbări majore.
