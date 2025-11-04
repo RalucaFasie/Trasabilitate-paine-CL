@@ -62,9 +62,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const displayContainer = document.getElementById('data-display');
     const buttons = document.querySelectorAll('.stage-button');
 
+    // Verificare defensive pentru existența elementelor
+    if (!displayContainer) {
+        console.error('Element #data-display nu a fost găsit');
+        return;
+    }
+
+    if (buttons.length === 0) {
+        console.warn('Nu au fost găsite butoane cu clasa .stage-button');
+        return; // Oprește execuția dacă nu există butoane
+    }
+
     // Funcția care afișează datele
     function displayData(stage) {
         const data = blockchainData[stage];
+        
+        if (!data) {
+            console.error(`Date nedefinite pentru etapa: ${stage}`);
+            return;
+        }
         
         let content = `<h2>${data.title}</h2>`;
         content += '<ul>';
