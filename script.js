@@ -82,14 +82,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        let content = `<h2>${data.title}</h2>`;
-        content += '<ul>';
-        data.points.forEach(point => {
-            content += `<li>${point}</li>`;
-        });
-        content += '</ul>';
+        // Add fade-out animation using CSS class
+        displayContainer.classList.add('fade-out');
+        
+        setTimeout(() => {
+            let content = `<h2>${data.title}</h2>`;
+            content += '<ul>';
+            data.points.forEach(point => {
+                content += `<li>${point}</li>`;
+            });
+            content += '</ul>';
 
-        displayContainer.innerHTML = content;
+            displayContainer.innerHTML = content;
+            
+            // Remove fade-out and trigger fade-in after a brief delay to ensure rendering
+            requestAnimationFrame(() => {
+                displayContainer.classList.remove('fade-out');
+            });
+        }, 300);
     }
 
     // Adaugă event listener pentru fiecare buton
